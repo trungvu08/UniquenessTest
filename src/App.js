@@ -158,7 +158,7 @@ function UniquenessTest() {
         ))}
         <p>Your score: {score}</p>
         <button type="submit">
-          Submit
+          Calculate Score
         </button>
       </form>
     </div>
