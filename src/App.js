@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
 
 const questions = [
   { id:  1, text: 'Involved in Key Club', value: 1 },
@@ -108,6 +106,7 @@ const questions = [
 function UniquenessTest() {
   const [score, setScore] = useState(100);
   const [selectedAnswers, setSelectedAnswers] = useState([]);
+  const [isRevealed, setIsRevealed] = useState(false); // track reveal state
 
   function handleAnswerSelected(answerId) {
     const answerIndex = selectedAnswers.indexOf(answerId);
@@ -122,45 +121,73 @@ function UniquenessTest() {
     }
   }
 
-  function handleSubmit(event) {
-    event.preventDefault();
-    // navigate to the results page and pass the final score as a prop
-    // or update the state to render the results component here
+  function handleReveal() {
+    setIsRevealed(true); // set reveal state to true
   }
 
   return (
     <div>
-      <h1>
-        Uniqueness Test
-      </h1>
-      <h4>
-        Are you an NPC??
-      </h4>
-      <blockquote>
-        Inspired by the Purity Test, the Uniqueness Test serves as a measure of a
-        high school student's individuality. Check every item you  Let's see how much of an NPC you are :)
-      </blockquote>
-      <form onSubmit={handleSubmit}>
-        {questions.map(question => (
-          <div key={question.id}>
-            <label>
-              {question.id}.
-              <input
-                type="checkbox"
-                name={`question-${question.id}`}
-                value={question.id}
-                checked={selectedAnswers.includes(question.id)}
-                onChange={() => handleAnswerSelected(question.id)}
-              />
-              {question.text}
-            </label>
-          </div>
-        ))}
-        <p>Your score: {score}</p>
-        <button type="submit">
-          Calculate Score
-        </button>
-      </form>
+      {isRevealed ? ( // conditionally render new content if isRevealed is true
+        <div>
+          <h1>
+            Uniqueness Test
+          </h1>
+          <h2>
+            Your score:
+          </h2>
+          <h2 style={{color:'red'}}>
+            {score}
+          </h2>
+          <blockquote style={{textDecorationLine:'underline'}}>
+            What does your score mean?
+          </blockquote>
+          <p>
+            The Uniqueness Test asked you 100 questions to determine your
+            level of uniqueness of a scale of 0 to 100. The closer you
+            are to 100, the more unique you are. The closer to 0 you are,
+            the more of an NPC you are. Ultimately, this game was made for
+            fun and these questions don't actually reflect what makes someone unique
+            or not. You are unique and special regardless of your score :)
+          </p>
+        </div>
+      ) : ( // render current content if isRevealed is false
+        <div>
+          <h1>
+            Uniqueness Test
+          </h1>
+          <h4>
+            Are you an NPC??
+          </h4>
+          <blockquote>
+            Inspired by the Purity Test, the Uniqueness Test serves as a measure of a
+            high school student's individuality. Check every item that describes you
+            and click the "Calculate Score" button once you're done. Let's see how much of an NPC you are! 
+          </blockquote>
+          <blockquote style={{fontStyle:'normal',fontWeight:'bold'}}>
+            DISCLAIMER: This is not an accurate measure of an individual's uniqueness!
+          </blockquote>
+          <text>
+            {questions.map(question => (
+              <div key={question.id}>
+                <label>
+                  {question.id}.
+                  <input
+                    type="checkbox"
+                    name={`question-${question.id}`}
+                    value={question.id}
+                    checked={selectedAnswers.includes(question.id)}
+                    onChange={() => handleAnswerSelected(question.id)}
+                  />
+                  {question.text}
+                </label>
+              </div>
+            ))}
+            <button type="submit" onClick={handleReveal}>
+              Calculate Score
+            </button>
+          </text>
+        </div>
+      )}
     </div>
   );
 }

@@ -1,20 +1,29 @@
 body {
-  font-family:monospace;
+  font-family:'Times New Roman', Times, serif;
   background-color:bisque;
 }
 
 h1 {
   text-align: center;
-  font-family:fantasy;
+  font-family:Impact;
   font-size: 3rem;
   font-weight: normal;
   text-decoration-line:underline;
   margin-bottom: 0rem;
 }
 
+h2 {
+  text-align: center;
+  font-family: Verdana;
+  font-size: 2rem;
+  font-weight: normal;
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+}
+
 h4 {
   text-align: center;
-  font-family: fantasy;
+  font-family: Impact;
   font-size: 1.5rem;
   font-weight: normal;
   margin-top: 0rem;
@@ -23,18 +32,18 @@ h4 {
 
 blockquote {
   text-align: center;
-  font-family: cursive;
+  font-family: monospace;
   font-size: 1rem;
   font-style: italic;
   margin-bottom:0.5rem;
 }
 
-form {
+text {
   text-align: left;
   max-width: 30rem;
   margin-left: 1rem;
   font-size: 1rem;
-  font-family:monospace;
+  font-family: monospace;
 }
 
 label {
@@ -48,7 +57,9 @@ input[type="checkbox"] {
 
 p {
   text-align: center;
-  margin: 2rem 0;
+  margin-top: 0rem;
+  font-size: 0.90rem;
+  font-family: monospace;
 }
 
 button[type="submit"] {
@@ -62,3 +73,5 @@ button[type="submit"] {
   font-size: 1.2rem;
   cursor: pointer;
 }
+
+
