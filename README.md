@@ -1,70 +1,26 @@
-# Getting Started with Create React App
+# Uniqueness Test
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
 
-## Available Scripts
+The Uniqueness Test is a simple 100 question test developed using React to determine the uniqueness of an individual on a scale of 0 to 100. The test was inspired by the popular Rice Purity test and designed for the purpose of entertainment. The target audience of this game is Southeast Asian high school students as it was developed to serve as an ice breaker for the workshops I'll be running during SEA Admit Weekend 2023. This test is in no way a legitimate measure of one's individuality.
 
-In the project directory, you can run:
+## Running the Application (2 options)
 
-### `npm start`
+### Option 1
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The Uniqueness Test is hosted on GitHub pages. Follow this [link](https://trungvu08.github.io/uniquenesstest/) to take the test.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Option 2
 
-### `npm test`
+You can also play the Uniqueness Test by cloning this repository and running the game locally. To do so, following these steps:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. have [Git](https://git-scm.com/downloads) and [Node.js](https://nodejs.org/en) installed on your device
+3. open the command line
+4. `git clone https://github.com/trungvu08/uniquenesstest`
+5. `cd uniquenesstest`
+6. `npm install`
+7. `npm start`
 
-### `npm run build`
+## Future Improvements
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+In the future, I would like to build upon this application by including a data analytics tab so players can compare their scores to the community. GitHub Pages unfortunately only supports static pages, so I'll have to find a site that supports dynamic pages. This would likely be Firebase since it can be used for the database and hosting. When will this feature come around? Not sure. It's not difficult, but I don't have the time for it at the moment.
