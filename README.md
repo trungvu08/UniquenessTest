@@ -2,7 +2,7 @@
 
 ## Description
 
-The Uniqueness Test is a simple 100 question test developed using React to determine the uniqueness of an individual on a scale of 0 to 100. The test was inspired by the popular Rice Purity test and designed for the purpose of entertainment. The target audience of this game is Southeast Asian high school students as it was developed to serve as an ice breaker for the workshops I'll be running during SEA Admit Weekend 2023. This test is in no way a legitimate measure of one's individuality.
+The Uniqueness Test is a simple test developed using React to determine the uniqueness of an individual on a scale of 0 to 100. The test was inspired by the popular Rice Purity test and designed for the purpose of entertainment. There are two versions of this game with one being for SEA ADMIT (100 questions) and another for SEATED (50 questions). The target audience of this game is Southeast Asian students as the Uniqueness Test was developed to serve as an ice-breaker for the workshops I run during Southeast Asian Admit Weekend 2023 and Southeast Asian Transfer Enrichment Day 2023. This test is in no way a legitimate measure of one's individuality.
 
 ## Running the Application (2 options)
 

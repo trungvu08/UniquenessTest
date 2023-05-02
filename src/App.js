@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const questions = [
+const sea_admit_questions = [
   { id:  1, text: 'Involved in Key Club', value: 1 },
   { id:  2, text: 'Held an club officer position', value: 1 },
   { id:  3, text: 'Took an AP class or IB program', value: 1 },
@@ -24,7 +24,7 @@ const questions = [
   { id: 21, text: 'Cannot swim', value: 1 },
   { id: 22, text: 'Has/had a crush', value: 1 },
   { id: 23, text: 'Did not get asked out (note: i feel u dawg)', value: 1 },
-  { id: 24, text: 'Plays Valorant or League or Legends', value: 1 },
+  { id: 24, text: 'Plays Valorant or League of Legends', value: 1 },
   { id: 25, text: 'Gets boba a lot', value: 1 },
   { id: 26, text: 'Has an iPhone', value: 1 },
   { id: 27, text: 'Got into the massive headphone trend', value: 1 },
@@ -103,10 +103,84 @@ const questions = [
   { id:100, text: 'Wears a fanny pack', value: 1 },
 ];
 
+const seated_questions = [
+  { id: 1, text: 'Gained freshman 15', value: 2 },
+  { id: 2, text: 'Has/had a crush on your TA', value: 2 },
+  { id: 3, text: 'Received a participation award', value: 2 },
+  { id: 4, text: "Thought your friend's sibling was hot", value: 2 },
+  { id: 5, text: 'Used ChatGPT or Chegg', value: 2 },
+  { id: 6, text: "Slid in someone's DMs", value: 2 },
+  { id: 7, text: 'Thought a professor was hot', value: 2 },
+  { id: 8, text: "Used a family member's \"death\" to get an extension", value: 2 },
+  { id: 9, text: 'Has perfect attendance', value: 2 },
+  { id: 10, text: 'Pulled an all-nighter', value: 2 },
+  { id: 11, text: 'Let it rip in public and pretended nothing happened', value: 2 },
+  { id: 12, text: 'Is/has been in a situationship', value: 2 },
+  { id: 13, text: 'Had an existential crisis', value: 2 },
+  { id: 14, text: 'Lied to parent(s)/guardian(s) about grades', value: 2 },
+  { id: 15, text: 'Has ghosted someone', value: 2 },
+  { id: 16, text: 'Actively uses TikTok', value: 2 },
+  { id: 17, text: 'Ran into classmates at a party', value: 2 },
+  { id: 18, text: 'Slept in class/lecture', value: 2 },
+  { id: 19, text: 'Has gotten a ticket', value: 2 },
+  { id: 20, text: 'Is on a dating app', value: 2 },
+  { id: 21, text: 'Gone on a roadtrip with college friends', value: 2 },
+  { id: 22, text: "Has been friend-zoned (Trung is so sorry for you)", value: 2 },
+  { id: 23, text: "Bought a gaming laptop for \"school\"", value: 2 },
+  { id: 24, text: 'Has a crippling boba addiction', value: 2 },
+  { id: 25, text: "Can't handle alcohol", value: 2 },
+  { id: 26, text: 'Bombed an exam', value: 2 },
+  { id: 27, text: 'Taken a midterm/final without studying', value: 2 },
+  { id: 28, text: 'Caught COVID-19', value: 2 },
+  { id: 29, text: "Can't live without caffeine", value: 2 },
+  { id: 30, text: "Avid Cupid by Fifty Fifty enjoyer", value: 2 },
+  { id: 31, text: "Religiously starts assignments the day they're due", value: 2 },
+  { id: 32, text: 'Is fake on BeReal', value: 2 },
+  { id: 33, text: 'Cannot speak your ethnic language', value: 2 },
+  { id: 34, text: 'Has not sung in the shower (real ppl sing in the shower)', value: 2 },
+  { id: 35, text: "Doesn't know about the legit Rice Purity test", value: 2 },
+  { id: 36, text: 'Does not think UCLA has all the baddies (u weird bruh)', value: 2 },
+  { id: 37, text: 'Wears Air Force 1s', value: 2 },
+  { id: 38, text: 'Watched World Cup not understanding soccer', value: 2 },
+  { id: 39, text: 'Calls soccer football (have u no pride?)', value: 2 },
+  { id: 40, text: 'Thinks Berkeley > UCLA (i swear if u check this box...)', value: 2 },
+  { id: 41, text: 'Has a finsta', value: 2 },
+  { id: 42, text: 'Has not attempted vlogging (I used to do vuLOGS on Instagram)', value: 2 },
+  { id: 43, text: 'Loves Keshi (why he is soooo hot)', value: 2 },
+  { id: 44, text: 'Plays Valorant or League of Legends', value: 2 },
+  { id: 45, text: 'Has cracked their phone', value: 2 },
+  { id: 46, text: 'Drives a white Lexus and unironically says "ahaha" (Kevin?)', value: 2 },
+  { id: 47, text: "Lied about your height (I'm 6ft btw)", value: 2 },
+  { id: 48, text: 'Does not love Gordon Ramsay (idiot sandwich <3)', value: 2 },
+  { id: 49, text: 'Has an Essentials hoodie', value: 2 },
+  { id: 50, text: "Is not enjoying SEATED (plz don't check this)", value: 2 },
+]
+
 function UniquenessTest() {
   const [score, setScore] = useState(100);
   const [selectedAnswers, setSelectedAnswers] = useState([]);
+  const [questionsAreRevealed, setQuestionsIsRevealed] = useState(false); // track reveal state
   const [isRevealed, setIsRevealed] = useState(false); // track reveal state
+  const [questions, setQuestions] = useState([]);
+
+  function handleReveal() {
+    setIsRevealed(true); // set reveal state to true
+  }
+
+  function handleQuestionReveal() {
+    setQuestionsIsRevealed(true); // set reveal state to true
+  }
+
+  function selectQuestionSet(event) {
+    if (event === 'SEA ADMIT') {
+      setQuestions(sea_admit_questions);
+      console.log("SEA ADMIT");
+    }
+    else {
+      setQuestions(seated_questions);
+      console.log("SEATED");
+    }
+  }
 
   function handleAnswerSelected(answerId) {
     const answerIndex = selectedAnswers.indexOf(answerId);
@@ -121,36 +195,73 @@ function UniquenessTest() {
     }
   }
 
-  function handleReveal() {
-    setIsRevealed(true); // set reveal state to true
-  }
-
   return (
     <div>
-      {isRevealed ? ( // conditionally render new content if isRevealed is true
+      {questionsAreRevealed ? ( // the main part of web app; will render if setQuestionsIsRevealed is true
         <div>
-          <h1>
-            Uniqueness Test
-          </h1>
-          <h2>
-            Your score:
-          </h2>
-          <h2 style={{color:'red'}}>
-            {score}
-          </h2>
-          <blockquote style={{textDecorationLine:'underline'}}>
-            What does your score mean?
-          </blockquote>
-          <p>
-            The Uniqueness Test asked you 100 questions to determine your
-            level of uniqueness of a scale of 0 to 100. The closer you
-            are to 100, the more unique you are. The closer to 0 you are,
-            the more of an NPC you are. Ultimately, this game was made for
-            fun and these questions don't actually reflect what makes someone unique
-            or not. You are unique and special regardless of your score :)
-          </p>
+          {isRevealed ? ( // display the player's score; conditionally render if isRevealed is true
+            <div>
+              <h1>
+                Uniqueness Test
+              </h1>
+              <h2>
+                Your score:
+              </h2>
+              <h2 style={{color:'red'}}>
+                {score}
+              </h2>
+              <blockquote style={{textDecorationLine:'underline'}}>
+                What does your score mean?
+              </blockquote>
+              <p>
+                The Uniqueness Test asked you 100 questions to determine your
+                level of uniqueness of a scale of 0 to 100. The closer you
+                are to 100, the more unique you are. The closer to 0 you are,
+                the more of an NPC you are. Ultimately, this game was made for
+                fun and these questions don't actually reflect what makes someone unique
+                or not. You are unique and special regardless of your score :)
+              </p>
+            </div>
+          ) : ( // display certain set of questions to player; render current content if isRevealed is false
+            <div>
+              <h1>
+                Uniqueness Test
+              </h1>
+              <h4>
+                Are you an NPC??
+              </h4>
+              <blockquote>
+                Inspired by the Purity Test, the Uniqueness Test serves as a measure of a
+                high school (SEA ADMIT version) or college (SEATED version) student's individuality. Check every item that describes you
+                and click the "Calculate Score" button once you're done. Let's see how much of an NPC you are! 
+              </blockquote>
+              <blockquote style={{fontStyle:'normal',fontWeight:'bold'}}>
+                DISCLAIMER: This is not an accurate measure of an individual's uniqueness!
+              </blockquote>
+              <text>
+                {questions.map(question => (
+                  <div key={question.id}>
+                    <label>
+                      {question.id}.
+                      <input
+                        type="checkbox"
+                        name={`question-${question.id}`}
+                        value={question.id}
+                        checked={selectedAnswers.includes(question.id)}
+                        onChange={() => handleAnswerSelected(question.id)}
+                      />
+                      {question.text}
+                    </label>
+                  </div>
+                ))}
+                <button type="submit" onClick={handleReveal}>
+                  Calculate Score
+                </button>
+              </text>
+            </div>
+          )}
         </div>
-      ) : ( // render current content if isRevealed is false
+      ) : ( // this is the starting screen code; will render if setQuestionsIsRevealed is false
         <div>
           <h1>
             Uniqueness Test
@@ -159,33 +270,14 @@ function UniquenessTest() {
             Are you an NPC??
           </h4>
           <blockquote>
-            Inspired by the Purity Test, the Uniqueness Test serves as a measure of a
-            high school student's individuality. Check every item that describes you
-            and click the "Calculate Score" button once you're done. Let's see how much of an NPC you are! 
+            Which event are you taking this test for??
           </blockquote>
-          <blockquote style={{fontStyle:'normal',fontWeight:'bold'}}>
-            DISCLAIMER: This is not an accurate measure of an individual's uniqueness!
-          </blockquote>
-          <text>
-            {questions.map(question => (
-              <div key={question.id}>
-                <label>
-                  {question.id}.
-                  <input
-                    type="checkbox"
-                    name={`question-${question.id}`}
-                    value={question.id}
-                    checked={selectedAnswers.includes(question.id)}
-                    onChange={() => handleAnswerSelected(question.id)}
-                  />
-                  {question.text}
-                </label>
-              </div>
-            ))}
-            <button type="submit" onClick={handleReveal}>
-              Calculate Score
-            </button>
-          </text>
+          <button type="submit" onClick={() => { selectQuestionSet("SEA ADMIT"); handleQuestionReveal(); }}>
+            SEA ADMIT 2023
+          </button>
+          <button type="submit" onClick={() => { selectQuestionSet("SEATED"); handleQuestionReveal(); }}>
+            SEATED 2023
+          </button>
         </div>
       )}
     </div>
