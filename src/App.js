@@ -215,7 +215,7 @@ function UniquenessTest() {
               </blockquote>
               <p>
                 The Uniqueness Test asked you a series of questions to determine your
-                level of uniqueness of a scale of 0 to 100. The closer you
+                level of uniqueness on a scale of 0 to 100. The closer you
                 are to 100, the more unique you are. The closer to 0 you are,
                 the more of an NPC you are. Ultimately, this game was made for
                 fun and these questions don't actually reflect what makes someone unique
