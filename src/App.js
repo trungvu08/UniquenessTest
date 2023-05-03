@@ -116,14 +116,14 @@ const seated_questions = [
   { id: 10, text: 'Pulled an all-nighter', value: 2 },
   { id: 11, text: 'Let it rip in public and pretended nothing happened', value: 2 },
   { id: 12, text: 'Is/has been in a situationship', value: 2 },
-  { id: 13, text: 'Had an existential crisis', value: 2 },
+  { id: 13, text: 'Has/had an existential crisis', value: 2 },
   { id: 14, text: 'Lied to parent(s)/guardian(s) about grades', value: 2 },
   { id: 15, text: 'Has ghosted someone', value: 2 },
   { id: 16, text: 'Actively uses TikTok', value: 2 },
   { id: 17, text: 'Ran into classmates at a party', value: 2 },
   { id: 18, text: 'Slept in class/lecture', value: 2 },
   { id: 19, text: 'Has gotten a ticket', value: 2 },
-  { id: 20, text: 'Is on a dating app', value: 2 },
+  { id: 20, text: 'Is/was on a dating app', value: 2 },
   { id: 21, text: 'Gone on a roadtrip with college friends', value: 2 },
   { id: 22, text: "Has been friend-zoned (Trung is so sorry for you)", value: 2 },
   { id: 23, text: "Bought a gaming laptop for \"school\"", value: 2 },
@@ -148,7 +148,7 @@ const seated_questions = [
   { id: 42, text: 'Has not attempted vlogging (I used to do vuLOGS on Instagram)', value: 2 },
   { id: 43, text: 'Loves Keshi (why he is soooo hot)', value: 2 },
   { id: 44, text: 'Plays Valorant or League of Legends', value: 2 },
-  { id: 45, text: 'Has cracked their phone', value: 2 },
+  { id: 45, text: 'Has cracked their phone screen', value: 2 },
   { id: 46, text: 'Drives a white Lexus and unironically says "ahaha" (Kevin?)', value: 2 },
   { id: 47, text: "Lied about your height (I'm 6ft btw)", value: 2 },
   { id: 48, text: 'Does not love Gordon Ramsay (idiot sandwich <3)', value: 2 },
@@ -214,7 +214,7 @@ function UniquenessTest() {
                 What does your score mean?
               </blockquote>
               <p>
-                The Uniqueness Test asked you 100 questions to determine your
+                The Uniqueness Test asked you a series of questions to determine your
                 level of uniqueness of a scale of 0 to 100. The closer you
                 are to 100, the more unique you are. The closer to 0 you are,
                 the more of an NPC you are. Ultimately, this game was made for
